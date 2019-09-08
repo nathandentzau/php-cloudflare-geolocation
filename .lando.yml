@@ -1,0 +1,18 @@
+name: cloudflare-geolocation
+
+services:
+  php:
+    type: php:7.3
+    via: cli
+    xdebug: true
+    run:
+      - composer install
+
+tooling:
+  composer:
+    service: php
+  php:
+    service: php
+  phpunit:
+    service: php
+    cmd: vendor/bin/phpunit
